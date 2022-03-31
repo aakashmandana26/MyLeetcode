@@ -14,8 +14,6 @@ class Solution:
                 rem += m%10 * (10**count)
                 m //= 10
                 count -= 1
-            if(rem == x):
-                return True
-            else: 
-                return False
+            return (rem == x)
+
             
