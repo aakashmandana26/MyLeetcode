@@ -25,48 +25,40 @@ class Solution:
                 carry = 1
                 l1 = l1.next
                 l2 = l2.next
-            print(tail.val)
+           
             
-            # tail.next = ListNode()
-            # tail = tail.next
-                
-                
-            
-        if(l1):
-            while(l1):
-                tail.next = ListNode()
-                tail = tail.next
-                
-                if(l1.val + carry < 10):
-                    tail.val = l1.val + carry
-                    carry = 0
+        
+        while(l1):
+            tail.next = ListNode()
+            tail = tail.next
+
+            if(l1.val + carry < 10):
+                tail.val = l1.val + carry
+                carry = 0
+
+            else:
+                tail.val = 0
+                carry = 1
+
+            l1 = l1.next
                     
-                else:
-                    tail.val = l1.val + carry - 10
-                    carry = 1
-                    
-                l1 = l1.next
-                    
+     
+        
+        while(l2):
+            tail.next = ListNode()
+            tail = tail.next
+
+            if(l2.val + carry < 10):
+                tail.val = l2.val + carry
+                carry = 0
+
+            else:
+                tail.val = l2.val + carry - 10
+                carry = 1
+
+            l2 = l2.next
 
                 
-                    
-            
-        if(l2):
-            while(l2):
-                tail.next = ListNode()
-                tail = tail.next
-                
-                if(l2.val + carry < 10):
-                    tail.val = l2.val + carry
-                    carry = 0
-                    
-                else:
-                    tail.val = l2.val + carry - 10
-                    carry = 1
-                    
-                l2 = l2.next
-
-                print(tail.val)
                     
         if(carry==1):
             tail.next = ListNode()
